@@ -1,0 +1,9 @@
+.internal-navbar:active {
+    background-color: #1463f3;
+    color: white !important;
+}
+@media (max-width: 450px) { 
+    .card-two, .card-three {
+        display: none;
+    }
+}

@@ -1,0 +1,24 @@
+#facebook-btn:hover {
+    background-color: #4D5E96;
+    color: white !important;
+}
+
+#twitter-btn:hover {
+    background-color: black;
+    color: white !important;
+}
+
+#linkedin-btn:hover {
+    background-color: #1469C7;
+    color: white !important;
+}
+
+#instagram-btn:hover {
+    background-color: #D93DAE;
+    color: white !important;
+}
+
+#youtube-btn:hover {
+    background-color: #FF0808;
+    color: white !important;
+}
