@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
+<<<<<<< HEAD
+=======
+
+>>>>>>> ee9a1f9c6cd4feb490c979edbdeb38036771b6e7
   },
   "keywords": [],
   "author": "",
