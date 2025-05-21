@@ -10,7 +10,7 @@ export default function SpecClearance() {
     async function getSpecClearanceDetails() {
         try {
             const token = localStorage.getItem("myToken");
-            const respSpecClear = await axios.get(`http://localhost:4000/api/v1/adminClearance/${clearId}`, {
+            const respSpecClear = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/adminClearance/${clearId}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respSpecClear.data) {

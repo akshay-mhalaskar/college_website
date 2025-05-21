@@ -10,7 +10,7 @@ export default function FacultyCleareanceTable() {
     async function getAllClearance() {
         const token = localStorage.getItem("myToken");
         try {
-            const respAllClearance = await axios.get('http://localhost:4000/api/v1/allClear', {
+            const respAllClearance = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/allClear`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respAllClearance.data) {
@@ -28,7 +28,7 @@ export default function FacultyCleareanceTable() {
     async function clearApprove(clearId) {
         const token = localStorage.getItem("myToken");
         try {
-            const respClearanceApprove = await axios.get(`http://localhost:4000/api/v1/validClear/${clearId}`, {
+            const respClearanceApprove = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/validClear/${clearId}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respClearanceApprove.data) {
@@ -47,7 +47,7 @@ export default function FacultyCleareanceTable() {
     async function clearReject(clearId) {
         const token = localStorage.getItem("myToken");
         try {
-            const respClearanceReject = await axios.get(`http://localhost:4000/api/v1/rejClear/${clearId}`, {
+            const respClearanceReject = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/rejClear/${clearId}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respClearanceReject.data) {

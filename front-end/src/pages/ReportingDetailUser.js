@@ -57,7 +57,7 @@ export default function ReportingDefaultUser() {
     async function getAlreadyDetails() {
         const token = localStorage.getItem("myToken");
         try {
-            const respAlreadyDetails = await axios.get('http://localhost:4000/api/v1/userDetails', {
+            const respAlreadyDetails = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/userDetails`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respAlreadyDetails.data) {
@@ -120,7 +120,7 @@ export default function ReportingDefaultUser() {
     async function updateReportingForm(reportId){
         const token = localStorage.getItem("myToken");
         try {
-            const respUpdatedReporting = await axios.post(`http://localhost:4000/api/v1//updateReport/${reportId}`,updatedReportingDetails,{
+            const respUpdatedReporting = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/v1//updateReport/${reportId}`,updatedReportingDetails,{
                 headers:{"Authorization" : "Bearer " + token}
             });
             if(respUpdatedReporting.data){

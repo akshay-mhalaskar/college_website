@@ -58,7 +58,7 @@ export default function ReportingDetails() {
     async function userFilledDetails() {
         const token = localStorage.getItem('myToken');
         try {
-            const respUserDetails = await axios.get(`http://localhost:4000/api/v1/reportDetails/${path}`, {
+            const respUserDetails = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/reportDetails/${path}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respUserDetails.data) {
@@ -121,7 +121,7 @@ export default function ReportingDetails() {
     async function updateReportingstatusA(reportId) {
         const token = localStorage.getItem('myToken');
         try {
-            const respUpdatedReportingA = await axios.get(`http://localhost:4000/api/v1/approveReport/${reportId}`, {
+            const respUpdatedReportingA = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/approveReport/${reportId}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respUpdatedReportingA.data) {
@@ -141,7 +141,7 @@ export default function ReportingDetails() {
         console.log(reportId);
         const token = localStorage.getItem('myToken');
         try {
-            const respUpdatedReportingR = await axios.post(`http://localhost:4000/api/v1/rejectReport/${reportId}`, {
+            const respUpdatedReportingR = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/rejectReport/${reportId}`, {
                 rejectionMessage: rejectReason
             }, {
                 headers: { "Authorization": "Bearer " + token }

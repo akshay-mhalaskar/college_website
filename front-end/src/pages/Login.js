@@ -19,7 +19,7 @@ export default function Login() {
 
     async function loginStudent() {
         try {
-            const respStudent = await axios.post('http://localhost:4000/api/v1/studentLogin', loginUser);
+            const respStudent = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/studentLogin`, loginUser);
             if (respStudent.data) {
                 localStorage.setItem("myToken", respStudent.data.userToken);
                 localStorage.setItem("isFaculty", false);
@@ -37,7 +37,7 @@ export default function Login() {
     }
     async function loginFaculty() {
         try {
-            const respFaculty = await axios.post('http://localhost:4000/api/v1/facultyLogin', loginUser);
+            const respFaculty = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/facultyLogin`, loginUser);
             if (respFaculty.data) {
                 localStorage.setItem("myToken", respFaculty.data.userToken);
                 localStorage.setItem("isFaculty", true);

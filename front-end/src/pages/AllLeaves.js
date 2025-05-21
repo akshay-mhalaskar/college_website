@@ -10,7 +10,7 @@ export default function AllLeaves() {
     async function getAllLeaveData() {
         const token = localStorage.getItem('myToken');
         try {
-            const respAllLeaves = await axios.get('http://localhost:4000/api/v1/allLeaves', {
+            const respAllLeaves = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/allLeaves`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respAllLeaves.data) {
@@ -28,7 +28,7 @@ export default function AllLeaves() {
     async function approveLeave(leaveID) {
         const token = localStorage.getItem('myToken');
         try {
-            const respLeaveApproved = await axios.get(`http://localhost:4000/api/v1/approveLeave/${leaveID}`, {
+            const respLeaveApproved = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/approveLeave/${leaveID}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respLeaveApproved.data) {
@@ -47,7 +47,7 @@ export default function AllLeaves() {
     async function denyLeave(leaveID) {
         const token = localStorage.getItem('myToken');
         try {
-            const respLeaveRejected = await axios.get(`http://localhost:4000/api/v1/rejectLeave/${leaveID}`, {
+            const respLeaveRejected = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/rejectLeave/${leaveID}`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respLeaveRejected.data) {

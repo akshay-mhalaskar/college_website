@@ -61,7 +61,7 @@ export default function ReportingForm() {
     async function reportingFormSubmit() {
         const token = localStorage.getItem('myToken');
         try {
-            const respReporting = await axios.post('http://localhost:4000/api/v1/reportAdd', reportingDetails, {
+            const respReporting = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/reportAdd`, reportingDetails, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respReporting.data) {

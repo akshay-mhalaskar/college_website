@@ -21,7 +21,7 @@ export default function LeaveForm() {
     async function submitLeaveForm() {
         const token = localStorage.getItem('myToken');
         try {
-            const respLeave = await axios.post('http://localhost:4000/api/v1/createLeave', leaveData, {
+            const respLeave = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/createLeave`, leaveData, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respLeave.data) {
@@ -41,7 +41,7 @@ export default function LeaveForm() {
     async function getMyAllLeaves(){
         const token = localStorage.getItem('myToken');
         try {
-            const respMyLeaves = await axios.get('http://localhost:4000/api/v1/myLeave',{
+            const respMyLeaves = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/myLeave`,{
                 headers: { "Authorization": "Bearer " + token }
             });
             if(respMyLeaves.data){

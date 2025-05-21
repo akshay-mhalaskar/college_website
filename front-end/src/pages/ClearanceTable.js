@@ -13,7 +13,7 @@ export default function ClearanceTable() {
     async function userClearanceDetails() {
         const token = localStorage.getItem('myToken');
         try {
-            const respClearDetails = await axios.get('http://localhost:4000/api/v1/userdetails', {
+            const respClearDetails = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/userdetails`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respClearDetails.data) {
@@ -31,7 +31,7 @@ export default function ClearanceTable() {
     async function getClearanceData() {
         const token = localStorage.getItem("myToken");
         try {
-            const respClearanceData = await axios.get('http://localhost:4000/api/v1/partClear', {
+            const respClearanceData = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/partClear`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respClearanceData.data) {

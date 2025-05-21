@@ -11,7 +11,7 @@ export default function FacultyCleareance() {
     async function allReportingDataLists() {
         const token = localStorage.getItem("myToken");
         try {
-            const respReportings = await axios.get('http://localhost:4000/api/v1/reportingStudents', {
+            const respReportings = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/reportingStudents`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respReportings.data) {

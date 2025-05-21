@@ -14,7 +14,7 @@ export default function ReportingTable() {
     async function userReportingDetails() {
         const token = localStorage.getItem('myToken');
         try {
-            const respReportingDetails = await axios.get('http://localhost:4000/api/v1/userdetails', {
+            const respReportingDetails = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/v1/userdetails`, {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (respReportingDetails.data) {
